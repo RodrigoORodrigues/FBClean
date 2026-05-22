@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FB Clean - Higienização Premium de Estofados no RJ</title>
+    
+    <!-- Google Fonts: Poppins para um visual limpo e premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            800: '#1a365d',
+                            900: '#0f2038',
+                        },
+                        royal: '#2563eb',
+                        cyan: '#06b6d4',
+                        whatsapp: '#25D366',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Animações flutuantes (Moléculas de água) */
+        .float-fast { animation: float 4s ease-in-out infinite; }
+        .float-medium { animation: float 6s ease-in-out infinite reverse; }
+        .float-slow { animation: float 8s ease-in-out infinite; }
+        
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        /* Efeito de pulso para o botão do WhatsApp */
+        .pulse-whatsapp {
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            animation: pulse-green 2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* Slider Antes/Depois - Customizações */
+        .slider-container {
+            --position: 50%;
+        }
+        .image-before {
+            clip-path: polygon(0 0, var(--position) 0, var(--position) 100%, 0 100%);
+        }
+        .slider-handle {
+            left: var(--position);
+            transform: translate(-50%, -50%);
+        }
+        input[type=range]::-webkit-slider-thumb {
+            appearance: none;
+            width: 40px;
+            height: 1000px; /* Grande o suficiente para cobrir a altura */
+            background: transparent;
+            cursor: ew-resize;
+        }
+        input[type=range]::-moz-range-thumb {
+            width: 40px;
+            height: 1000px;
+            background: transparent;
+            cursor: ew-resize;
+            border: none;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased bg-gray-50 overflow-x-hidden">
+
+    <!-- Header com Logo -->
+    <header class="absolute top-0 left-0 w-full z-50 py-6">
+        <div class="container mx-auto px-4 flex justify-center md:justify-start">
+            <!-- Caso a imagem não carregue no preview, usei um tamanho fixo aproximado -->
+            <img src="/Logo.png" alt="Logo FB Clean" class="h-16 md:h-20 drop-shadow-lg object-contain">
+        </div>
+    </header>
+
+    <a href="https://wa.me/5521966611815?text=Olá! Gostaria de um orçamento gratuito para higienização." target="_blank" 
+       class="fixed bottom-6 right-6 z-50 bg-whatsapp text-white p-4 rounded-full pulse-whatsapp flex items-center justify-center hover:bg-green-500 transition-colors duration-300">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Gradient Overlay -->
+        <div class="absolute inset-0 bg-navy-900">
+            <img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&q=80&w=2070" 
+                 alt="Sofá luxuoso sendo higienizado" 
+                 class="w-full h-full object-cover opacity-40 mix-blend-overlay">
+            <div class="absolute inset-0 bg-gradient-to-r from-navy-900/90 to-royal/60"></div>
+        </div>
+
+        <!-- Elementos 3D flutuantes (Partículas/Moléculas de limpeza) -->
+        <div class="absolute top-20 left-10 w-16 h-16 bg-white/10 rounded-full blur-md float-slow"></div>
+        <div class="absolute top-40 right-20 w-24 h-24 bg-cyan/20 rounded-full blur-lg float-medium"></div>
+        <div class="absolute bottom-20 left-1/4 w-12 h-12 bg-white/20 rounded-full blur-sm float-fast"></div>
+        <div class="absolute bottom-32 right-1/3 w-20 h-20 bg-royal/30 rounded-full blur-md float-slow"></div>
+
+        <!-- Conteúdo Principal -->
+        <div class="container mx-auto px-4 z-10 pt-16 pb-12">
+            <div class="max-w-3xl glass p-8 md:p-12 rounded-3xl shadow-2xl">
+                <span class="inline-block text-cyan font-bold tracking-wider text-sm mb-3 uppercase">
+                    <i class="fa-solid fa-sparkles mr-2"></i> Higienização Premium no Rio de Janeiro
+                </span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+                    Seu Estofado Como Novo e a Sua <span class="text-cyan">Família Protegida.</span>
+                </h1>
+                <p class="text-gray-200 text-lg md:text-xl mb-8 leading-relaxed">
+                    Especialistas em higienização profunda, impermeabilização de estofados e estética automotiva. Eliminamos ácaros, odores e manchas com tecnologia de ponta, devolvendo o conforto e o bem-estar para o seu lar.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/5521966611815?text=Olá! Quero aproveitar a oferta de higienização." target="_blank"
+                       class="bg-whatsapp hover:bg-green-500 text-white font-bold py-4 px-8 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-whatsapp/30">
+                        <i class="fa-brands fa-whatsapp text-2xl mr-3"></i> Fazer Orçamento Grátis
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-royal py-6 relative overflow-hidden shadow-inner">
+        <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')]"></div>
+        <div class="container mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center justify-between">
+            <div class="flex items-center mb-4 md:mb-0">
+                <div class="bg-yellow-400 text-navy-900 font-bold p-3 rounded-full mr-4 shadow-lg">
+                    <i class="fa-solid fa-gift text-2xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-white text-xl md:text-2xl font-bold uppercase tracking-wide">Lave qualquer Sofá ou Colchão</h3>
+                    <p class="text-yellow-300 font-extrabold text-2xl md:text-3xl">E GANHE 1 lavagem de cadeira!</p>
+                    <p class="text-gray-200 text-sm mt-1 italic"><i class="fa-solid fa-clock mr-1"></i> Atenção: Válido para os 15 primeiros agendamentos da semana.</p>
+                </div>
+            </div>
+            <a href="https://wa.me/5521966611815?text=Quero garantir meu brinde da lavagem da cadeira!" target="_blank"
+               class="bg-yellow-400 hover:bg-yellow-300 text-navy-900 font-bold py-3 px-8 rounded-xl whitespace-nowrap transition-transform transform hover:scale-105 shadow-xl">
+                Quero Garantir Meu Brinde!
+            </a>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white" id="servicos">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-4">Especialistas em <span class="text-royal">Renovação e Cuidado</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Trazemos a solução ideal para cada tipo de estofado, com técnicas e produtos específicos que garantem resultados supreendentes e seguros para sua família e pets.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(26,54,93,0.08)] border border-transparent hover:border-cyan hover:shadow-[0_8px_30px_rgba(6,182,212,0.2)] transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-blue-50 text-royal rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:bg-royal group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-couch"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">Sofás</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Remoção profunda de sujeiras, suor e manchas. O cartão de visitas da sua sala, impecável novamente.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(26,54,93,0.08)] border border-transparent hover:border-cyan hover:shadow-[0_8px_30px_rgba(6,182,212,0.2)] transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-blue-50 text-royal rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:bg-royal group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-bed"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">Colchões</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Eliminação de ácaros, pele morta e suor. Garantia de noites de sono verdadeiramente saudáveis e seguras.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(26,54,93,0.08)] border border-transparent hover:border-cyan hover:shadow-[0_8px_30px_rgba(6,182,212,0.2)] transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-blue-50 text-royal rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:bg-royal group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-rug"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">Tapetes</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Fim da poeira acumulada e dos odores indesejados. Revitalização completa das cores e das fibras.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(26,54,93,0.08)] border border-transparent hover:border-cyan hover:shadow-[0_8px_30px_rgba(6,182,212,0.2)] transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-blue-50 text-royal rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:bg-royal group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-couch"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">Poltronas</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">O seu canto favorito da casa higienizado e livre de bactérias, restaurando o conforto que você merece.</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(26,54,93,0.08)] border border-transparent hover:border-cyan hover:shadow-[0_8px_30px_rgba(6,182,212,0.2)] transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-blue-50 text-royal rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:bg-royal group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-chair"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">Cadeiras</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Estética renovada para a sua sala de jantar. Limpeza detalhada contra manchas de alimentos e líquidos.</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(26,54,93,0.08)] border border-transparent hover:border-cyan hover:shadow-[0_8px_30px_rgba(6,182,212,0.2)] transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-blue-50 text-royal rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:bg-royal group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-car-side"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">Bancos Auto</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Estética automotiva premium. Seu carro com cheiro de novo, livre de encardidos e poeira profunda.</p>
+                </div>
+                <!-- Card 7 -->
+                <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(26,54,93,0.08)] border border-transparent hover:border-cyan hover:shadow-[0_8px_30px_rgba(6,182,212,0.2)] transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-blue-50 text-royal rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:bg-royal group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">Teto de Carros</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Remoção segura de poeira e manchas do teto, com técnica a seco que não danifica a estrutura original.</p>
+                </div>
+                <!-- Card 8 -->
+                <div class="bg-white p-8 rounded-2xl shadow-[0_4px_20px_rgba(26,54,93,0.08)] border border-transparent hover:border-cyan hover:shadow-[0_8px_30px_rgba(6,182,212,0.2)] transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="w-14 h-14 bg-blue-50 text-royal rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:bg-royal group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-baby-carriage"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">Carrinho de Bebê</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Higienização atóxica e delicada. Proteção máxima para quem você mais ama contra fungos e bactérias.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50 relative overflow-hidden">
+        <!-- Detalhes de fundo abstratos -->
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-navy-900/5 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-cyan/10 rounded-full blur-3xl"></div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                <!-- Imagem -->
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="absolute inset-0 bg-royal rounded-3xl transform translate-x-4 translate-y-4 opacity-20"></div>
+                    <img src="/foto.jpeg" 
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=1000';"
+                         alt="Profissional da FB Clean a realizar higienização em sofá" 
+                         class="relative rounded-3xl shadow-2xl object-cover object-center w-full h-[500px]">
+                    
+                    <!-- Selo flutuante -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl flex items-center gap-4">
+                        <div class="bg-cyan/10 text-cyan p-3 rounded-full">
+                            <i class="fa-solid fa-shield-halved text-2xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-navy-900 font-bold text-lg">100% Seguro</p>
+                            <p class="text-gray-500 text-sm">Produtos Atóxicos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Textos -->
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-8 leading-tight">Tecnologia e Cuidado que <span class="text-royal">Fazem a Diferença</span></h2>
+                    
+                    <div class="space-y-8">
+                        <div class="flex">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-cyan/20 flex items-center justify-center text-cyan">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-bold text-navy-900 mb-2">Saúde em Primeiro Lugar</h4>
+                                <p class="text-gray-600 leading-relaxed">Eliminação de até 99,9% dos ácaros, fungos, bactérias e odores (como urina de pets). Prevenção direta de alergias respiratórias para a sua família.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-cyan/20 flex items-center justify-center text-cyan">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-bold text-navy-900 mb-2">Secagem Rápida</h4>
+                                <p class="text-gray-600 leading-relaxed">Utilizamos extratoras de alto poder de sucção. Seu estofado pronto para uso em poucas horas, sem aquele incômodo cheiro de umidade.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-cyan/20 flex items-center justify-center text-cyan">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-bold text-navy-900 mb-2">Impermeabilização Premium</h4>
+                                <p class="text-gray-600 leading-relaxed">Criação de uma barreira protetora invisível contra líquidos e manchas, aumentando a vida útil do seu móvel sem alterar a cor ou a textura do tecido.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white border-t border-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-4">Os Resultados <span class="text-royal">Falam por Si</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mb-4">Arraste a barra central para os lados e veja a mágica da nossa tecnologia de extração profunda. Não troque seu estofado, renove-o!</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-8 justify-center items-center">
+                
+                <!-- Slider 1: Sofá -->
+                <div class="w-full max-w-lg">
+                    <h3 class="text-center font-bold text-navy-900 mb-4 bg-gray-50 py-2 rounded-lg">Sofá Retrátil</h3>
+                    <!-- Container do Slider (Requer JS) -->
+                    <div class="slider-container relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl select-none" style="--position: 50%;">
+                        <!-- Imagem DEPOIS (Fundo) -->
+                        <img src="/sofa-limpo.png" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f8fafc/1e293b?text=Sofa+Depois+(Limpo)';" alt="Sofá Limpo" class="absolute w-full h-full object-cover select-none pointer-events-none">
+                        
+                        <!-- Imagem ANTES (Sobreposta com clip-path via CSS variável) -->
+                        <img src="sofa-sujo.png" onerror="this.onerror=null; this.src='https://placehold.co/800x600/94a3b8/1e293b?text=Sofa+Antes+(Sujo)';" alt="Sofá Sujo" class="image-before absolute w-full h-full object-cover select-none pointer-events-none">
+                        
+                        <!-- Barra Divisória e Ícone -->
+                        <div class="slider-handle absolute top-1/2 w-1 h-full bg-white shadow-[0_0_10px_rgba(0,0,0,0.5)] pointer-events-none z-10 flex items-center justify-center">
+                            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-gray-200 text-royal text-sm font-black">
+                                <i class="fa-solid fa-arrows-left-right"></i>
+                            </div>
+                        </div>
+
+                        <!-- Input Range invisível para controle táctil/mouse -->
+                        <input type="range" min="0" max="100" value="50" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20" oninput="updateSlider(this)">
+                    </div>
+                </div>
+
+                <!-- Slider 2: Banco de Carro -->
+                <div class="w-full max-w-lg">
+                    <h3 class="text-center font-bold text-navy-900 mb-4 bg-gray-50 py-2 rounded-lg">Bancos Automotivos</h3>
+                    <div class="slider-container relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl select-none" style="--position: 50%;">
+                        <!-- Imagem DEPOIS (Fundo) -->
+                        <img src="/banco-limpo.png" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=Banco+Depois+(Limpo)';" alt="Banco Limpo" class="absolute w-full h-full object-cover select-none pointer-events-none">
+                        
+                        <!-- Imagem ANTES (Sobreposta) -->
+                        <img src="/banco-sujo.png" onerror="this.onerror=null; this.src='https://placehold.co/800x600/64748b/0f172a?text=Banco+Antes+(Sujo)';" alt="Banco Sujo" class="image-before absolute w-full h-full object-cover select-none pointer-events-none">
+                        
+                        <!-- Barra Divisória e Ícone -->
+                        <div class="slider-handle absolute top-1/2 w-1 h-full bg-white shadow-[0_0_10px_rgba(0,0,0,0.5)] pointer-events-none z-10 flex items-center justify-center">
+                            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-gray-200 text-royal text-sm font-black">
+                                <i class="fa-solid fa-arrows-left-right"></i>
+                            </div>
+                        </div>
+
+                        <!-- Input Range invisível -->
+                        <input type="range" min="0" max="100" value="50" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20" oninput="updateSlider(this)">
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://wa.me/5521966611815?text=Uau! Vi o antes e depois no site e quero agendar." target="_blank"
+                   class="inline-block bg-navy-900 hover:bg-royal text-white font-bold py-4 px-10 rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
+                    Quero Esse Resultado no Meu Sofá
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-navy-900 text-gray-300 py-12 border-t-4 border-cyan">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                
+                <!-- Coluna 1: Marca -->
+                <div>
+                    <img src="/Logo.png" alt="Logo FB Clean" class="h-20 mb-4 object-contain">
+                    <p class="text-sm leading-relaxed mb-6">
+                        Excelência em Higienização e Impermeabilização no Rio de Janeiro. Cuidando da saúde da sua família e preservando o seu patrimônio com tecnologia premium.
+                    </p>
+                </div>
+
+                <!-- Coluna 2: Contatos -->
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-4">Atendimento</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-whatsapp text-lg w-5 text-center"></i>
+                            <a href="https://wa.me/5521966611815" target="_blank" class="hover:text-white transition-colors">(21) 96661-1815</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-location-dot text-cyan text-lg w-5 text-center"></i>
+                            <span>Atendimento a domicílio em todo RJ</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-brands fa-instagram text-pink-500 text-lg w-5 text-center"></i>
+                            <a href="https://instagram.com/fb_clean_hiestofados" target="_blank" class="hover:text-white transition-colors">@fb_clean_hiestofados</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 3: Pagamento -->
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-4">Formas de Pagamento</h3>
+                    <p class="text-sm mb-4">Facilitamos o seu pagamento. Aceitamos cartões:</p>
+                    <div class="flex flex-wrap gap-3 text-2xl text-gray-400">
+                        <i class="fa-brands fa-cc-visa hover:text-white transition-colors" title="Visa"></i>
+                        <i class="fa-brands fa-cc-mastercard hover:text-white transition-colors" title="Mastercard"></i>
+                        <i class="fa-brands fa-cc-amex hover:text-white transition-colors" title="American Express"></i>
+                        <i class="fa-brands fa-cc-diners-club hover:text-white transition-colors" title="Diners"></i>
+                        <i class="fa-solid fa-credit-card hover:text-white transition-colors" title="Elo/Hipercard"></i>
+                        <i class="fa-solid fa-money-bill-transfer hover:text-white transition-colors" title="Pix"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-500">
+                <p>&copy; 2026 FB Clean Higienização. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lógica em Javascript para os componentes interativos -->
+    <script>
+        // Função para atualizar a posição do slider (Antes/Depois)
+        function updateSlider(inputElement) {
+            // Pega o valor do input range (0 a 100)
+            const sliderValue = inputElement.value;
+            // Encontra o container pai
+            const container = inputElement.closest('.slider-container');
+            // Atualiza a variável CSS customizada que controla o clip-path e a posição da barra
+            container.style.setProperty('--position', `${sliderValue}%`);
+        }
+    </script>
+</body>
+</html>
