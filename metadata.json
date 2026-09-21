@@ -1,0 +1,6 @@
+{
+  "name": "FB Clean",
+  "description": "Higienização premium e impermeabilização de estofados e estética automotiva no Rio de Janeiro.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
