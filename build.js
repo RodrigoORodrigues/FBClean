@@ -4,9 +4,11 @@ import path from 'path';
 const rootDir = process.cwd();
 const publicDir = path.join(rootDir, 'public');
 
-if (!fs.existsSync(publicDir)) {
-  fs.mkdirSync(publicDir, { recursive: true });
+// Clean existing public directory
+if (fs.existsSync(publicDir)) {
+  fs.rmSync(publicDir, { recursive: true, force: true });
 }
+fs.mkdirSync(publicDir, { recursive: true });
 
 // Copy all static assets from root to public
 const items = fs.readdirSync(rootDir);
